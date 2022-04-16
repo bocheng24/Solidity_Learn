@@ -7,7 +7,7 @@ function <func-name> {
     ...
 }
 ```
-### external - can be accessed 
+### external - can be accessed outside of the contract
 
 ```solidity
 function <func-name> (inputA, inputB, ...) external {
@@ -33,7 +33,7 @@ function <func-name> (inputA, inputB, ...) external view {
 }
 ```
 
-### returns - define what types of values are returned for this function
+### returns - define what data types are returned for this function
 
 ```solidity
 function <func-name> external pure returns (uint, int) {
