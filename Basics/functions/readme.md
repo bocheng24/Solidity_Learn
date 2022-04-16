@@ -137,3 +137,36 @@ function incByOne(uint x) public pure validNum(x) returns (uint) {
     return x += 1;
 }
 ```
+
+## Return multiple results
+
+1. Use tuple
+```solidity
+function incByOne(uint x) public pure validNum(x) returns (uint, bool) {
+    x += 1;
+    return (x, true);
+}
+```
+
+2. Assign to return variables, there is no 'return' written
+```solidity
+function incByOne(uint x) public pure validNum(x) returns (uint result, bool isSuccess) {
+
+    result = x + 1;
+    isSuccess = true;
+}
+```
+
+3. Destructing variables
+
+> Get both variables
+
+```solidity
+(result, isSuccess) = incByOne(3);
+```
+
+> Only get the 2nd variable
+
+```solidity
+(, isSuccess) = incByOne(3);
+```
