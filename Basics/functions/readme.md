@@ -10,16 +10,26 @@ function <func-name> {
 ### external - can be accessed 
 
 ```solidity
-function <func-name> external {
+function <func-name> (inputA, inputB, ...) external {
     ...
 }
 ```
 
-### pure - read only
+### pure - read only, and it only access local variables
 
 ```solidity
-function <func-name> external pure {
-    ...
+function <func-name> (inputA, inputB, ...) external pure {
+    <local-info>
+}
+```
+
+### view - read only, and it access global, state, local variables
+
+```solidity
+function <func-name> (inputA, inputB, ...) external view {
+    <block-info>
+    <state-info>
+    <local-info>
 }
 ```
 
