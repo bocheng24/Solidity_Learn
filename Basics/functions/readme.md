@@ -106,3 +106,34 @@ function incByOne(uint x) public view returns (uint) {
     return x += 1;
 }
 ```
+
+## Modifier
+
+### This can create re-usable functions
+
+**Define a modifier**
+
+```solidity
+modifier <modifer-name> {
+
+    ... // codes to run before main function
+    _;  // main function codes to run
+    ... // optional - codes to run after main function
+}
+```
+
+> For example
+```solidity
+modifier validNum(uint num) {
+    require (num < 10);
+    _;
+}
+```
+
+**Use a modifier**
+
+```solidity
+function incByOne(uint x) public pure validNum(x) returns (uint) {
+    return x += 1;
+}
+```
